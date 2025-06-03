@@ -1,14 +1,15 @@
 {
   "name": "tech-unity-alumni-connect",
   "private": true,
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "dev": "ng serve",
-    "build": "npx @angular/cli@latest build --configuration production",
-    "vercel-build": "node vercel-build.js",
-    "postbuild": "cpx \"src/_redirects\" \"dist/tech-unity-alumni-connect/\""
-  },
+ "scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "dev": "ng serve",
+  "build": "ng build --configuration production",
+  "postbuild": "cpx \"src/_redirects\" \"dist/tech-unity-alumni-connect/\""
+}
+
+  ,
   "dependencies": {
     "@angular/animations": "^17.2.0",
     "@angular/common": "^17.2.0",
