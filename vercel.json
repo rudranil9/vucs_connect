@@ -4,13 +4,9 @@
   "installCommand": "npm install",
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist/tech-unity-alumni-connect",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
+  
     
-  ],
+  
     "routes": [
     { "src": "/(.*)", "dest": "/index.html" }
   ]
