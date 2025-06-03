@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "dev": "ng serve",
-    "build": "ng build --configuration production",
-    "vercel-build": "ng build --configuration production",
+    "build": "npx @angular/cli@latest build --configuration production",
+    "vercel-build": "node vercel-build.js",
     "postbuild": "cpx \"src/_redirects\" \"dist/tech-unity-alumni-connect/\""
   },
   "dependencies": {

@@ -1,14 +1,13 @@
 {
   "version": 2,
   "framework": "angular",
+  "installCommand": "npm install",
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist/tech-unity-alumni-connect",
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/tech-unity-alumni-connect",
-        "buildCommand": "npm run vercel-build"
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
