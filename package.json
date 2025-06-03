@@ -1,17 +1,16 @@
 {
   "name": "tech-unity-alumni-connect",
   "private": true,
-"scripts": {
-  "ng": "ng",
-  "start": "ng serve",
-  "dev": "ng serve",
-  "build": "ng build --configuration production",
-  "postbuild": "cpx \"src/_redirects\" \"dist/tech-unity-alumni-connect/\""
-},
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "dev": "ng serve",
+   "build": "npx ng build --configuration production",
 
+    "postbuild": "cpx \"src/_redirects\" \"dist/tech-unity-alumni-connect/\""
+  },
   "dependencies": {
     "@angular/animations": "^17.2.0",
-    "@angular/cli": "^17.3.17",
     "@angular/common": "^17.2.0",
     "@angular/compiler": "^17.2.0",
     "@angular/core": "^17.2.0",
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.2.0",
+    "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^17.2.0",
     "cpx": "^1.5.0",
     "rimraf": "^5.0.0",
