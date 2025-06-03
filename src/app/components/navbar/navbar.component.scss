@@ -1,0 +1,1094 @@
+/* Standard CSS styles */
+nav {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+// Main navbar container
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 0.5rem 1rem;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  background-color: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  // Binary background decoration
+  .binary-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: -1;
+    
+    .binary-stream {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      font-family: 'Courier New', monospace;
+      white-space: nowrap;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #8b5cf6;
+      animation: binarySlide 20s linear infinite;
+    }
+    
+    .stream-delayed {
+      top: 10px;
+      animation-delay: 5s;
+      animation-duration: 25s;
+    }
+  }
+  
+  // Circuit board pattern decoration
+  .circuit-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px, 10px 10px, 10px 10px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+// Navbar states with enhanced backdrop and animation
+.scrolled-nav {
+  background-color: rgba(20, 30, 46, 0.98);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 0 0 30px rgba(139, 92, 246, 0.08);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  
+  // Animated border glow when scrolled
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(139, 92, 246, 0.3), 
+      rgba(139, 92, 246, 0.5), 
+      rgba(139, 92, 246, 0.3), 
+      transparent
+    );
+    animation: borderPulse 3s ease-in-out infinite;
+  }
+  
+  // Dark mode scrolled state
+  .dark & {
+    background-color: rgba(15, 23, 42, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(139, 92, 246, 0.07);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  }
+}
+
+.transparent-nav {
+  background-color: transparent;
+}
+
+// Main navbar layout
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+// CS Department Logo with advanced effects
+.nav-logo {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  
+  .logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(139, 92, 246, 0.15);
+      
+      &::after {
+        opacity: 0.7;
+        transform: translateX(10px) skewX(-15deg);
+      }
+      
+      .glitch-effect {
+        opacity: 1;
+      }
+    }
+    
+    // Shimmer effect
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translateX(-100px) skewX(-15deg);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+  }
+  
+  .code-brackets {
+    color: #a78bfa;
+    font-weight: 600;
+    margin-right: 0.25rem;
+    position: relative;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.4);
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+  
+  .logo-text {
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #ffffff, #f3f4f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .logo-accent {
+    color: #a78bfa;
+    font-weight: 700;
+    background: linear-gradient(90deg, #a78bfa, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  // Glitch effect for tech feel
+  .glitch-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(139, 92, 246, 0.1), 
+      transparent
+    );
+    background-size: 200% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    animation: glitchAnimation 2s linear infinite;
+  }
+}
+
+// Navigation links with CS theme styling
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.nav-item {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+  position: relative;
+  padding: 0.3rem 0;
+  
+  &.item-highlight {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      right: -10px;
+      bottom: 0;
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 4px;
+      z-index: -1;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.3s ease;
+      animation: pulseHighlight 2s infinite;
+    }
+    
+    .nav-link {
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(167, 139, 250, 0.4);
+    }
+  }
+}
+
+.nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 4px;
+  
+  // Circuit connector line
+  .menu-btn-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 4px;
+    z-index: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+  // Highlight background
+  .link-highlight {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+    border-radius: 4px;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+  
+  .nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .nav-text {
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  &:hover, &.active {
+    color: #ffffff;
+    
+    .nav-icon {
+      opacity: 1;
+      transform: scale(1.1);
+      color: #a78bfa;
+    }
+    
+    .link-highlight {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .circuit-connector {
+      width: 80%;
+      opacity: 1;
+    }
+  }
+  
+  &.active {
+    color: #ffffff;
+    font-weight: 600;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 15%;
+      width: 70%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), rgba(124, 58, 237, 0.8));
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    }
+  }
+}
+
+// Right side actions (social icons, theme toggle)
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// Social icon with CS theme styling
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  position: relative;
+  background: rgba(139, 92, 246, 0.05);
+  
+  // Tooltip for tech feel
+  .tech-tooltip {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background: rgba(15, 23, 42, 0.9);
+    color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 10px;
+      height: 10px;
+      background: rgba(15, 23, 42, 0.9);
+      border-left: 1px solid rgba(139, 92, 246, 0.3);
+      border-top: 1px solid rgba(139, 92, 246, 0.3);
+    }
+  }
+  
+  // Glow effect
+  .icon-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.1);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  &:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    
+    .tech-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    .icon-glow {
+      opacity: 1;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    }
+  }
+  
+  .github-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// Theme toggle button with advanced animations
+.theme-toggle {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+  
+  // Pulse animation container
+  .toggle-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(139, 92, 246, 0.4);
+    animation: pulse 2s infinite;
+    opacity: 0;
+    z-index: 0;
+  }
+  
+  &:hover {
+    background-color: rgba(139, 92, 246, 0.1);
+    transform: translateY(-2px);
+    
+    .toggle-pulse {
+      opacity: 1;
+    }
+  }
+  
+  .theme-toggle-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(124, 58, 237, 0.4));
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  &:hover .theme-toggle-bg {
+    opacity: 0.2;
+  }
+  
+  .theme-icon-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sun-icon, .moon-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .sun-icon {
+    color: #fbbf24;
+    filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.4));
+    animation: sun-burst 3s ease-in-out infinite alternate;
+    
+    &:hover {
+      filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.7));
+      transform: scale(1.1) rotate(15deg);
+    }
+  }
+  
+  .moon-icon {
+    color: #a78bfa;
+    filter: drop-shadow(0 0 3px rgba(167, 139, 250, 0.4));
+    animation: moon-glow 3s ease-in-out infinite alternate;
+    
+    &:hover {
+      filter: drop-shadow(0 0 5px rgba(167, 139, 250, 0.7));
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Classic mobile menu button
+.mobile-menu-btn {
+  display: none;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1000; // Higher z-index to ensure it's clickable
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-btn-background {
+    position: absolute;
+    inset: 0;
+    background: rgba(139, 92, 246, 0.1);
+    opacity: 1;
+    transition: all 0.3s ease;
+    border-radius: 0.375rem;
+  }
+  
+  &:hover, &:active, &:focus {
+    transform: translateY(-1px);
+    background-color: rgba(139, 92, 246, 0.15);
+    
+    .menu-icon {
+      stroke: #a78bfa;
+    }
+  }
+  
+  .menu-icon {
+    width: 2rem;
+    height: 2rem;
+    stroke: #ffffff;
+    stroke-width: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// Mobile menu backdrop
+.mobile-menu-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.85);
+  z-index: 998;
+  
+  &.active {
+    display: block;
+    animation: fadeIn 0.2s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Mobile menu with CS theme styling
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px; // Set a specific top value to position it below the navbar
+  left: 0;
+  right: 0;
+  z-index: 999; // Even higher z-index to ensure it appears above other elements
+  width: 100%;
+  height: calc(100vh - 70px); // Full viewport height minus navbar height
+  overflow-y: auto; // Allow scrolling if menu is taller than viewport
+  background-color: rgba(15, 23, 42, 0.98); // Almost opaque dark background
+  border-top: 2px solid rgba(139, 92, 246, 0.5); // Purple border at the top
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8); // Strong shadow for depth
+  
+  &.active {
+    display: block !important; // Force display
+    animation: fadeInMenu 0.3s ease-out forwards;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &.inactive {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+  
+  // Style the menu items to be more visible
+  .mobile-nav-item {
+    margin: 15px 0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(139, 92, 246, 0.2);
+      transform: translateX(5px);
+    }
+    
+    a {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-container {
+  padding: 1.25rem 1rem;
+  background-color: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 0 0 0.75rem 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 15px rgba(139, 92, 246, 0.1);
+  margin-top: 0;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-top: none;
+  overflow: hidden;
+  position: relative;
+  
+  // Circuit board pattern for mobile menu
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px, 10px 10px, 10px 10px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .dark & {
+    background-color: rgba(15, 23, 42, 0.95);
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+}
+
+// Binary code decoration with animation
+.binary-decoration {
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: rgba(139, 92, 246, 0.6);
+  overflow: hidden;
+  padding: 0.75rem 0;
+  font-family: 'Courier New', monospace;
+  position: relative;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  
+  span {
+    display: inline-block;
+    animation: binaryFlicker 5s linear infinite;
+    background: linear-gradient(90deg, 
+      rgba(139, 92, 246, 0.1) 0%, 
+      rgba(139, 92, 246, 0.6) 50%, 
+      rgba(139, 92, 246, 0.1) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 10s linear infinite;
+  }
+  
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+  }
+  
+  &::before {
+    left: 0;
+  }
+  
+  &::after {
+    right: 0;
+  }
+}
+
+.code-snippet-decoration {
+  margin-top: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #6b7280;
+  
+  .dark & {
+    border-color: #374151;
+    color: #9ca3af;
+  }
+  margin-bottom: 0.5rem;
+}
+
+// Mobile navigation list with CS theme styling
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav-item {
+  opacity: 0;
+  animation: fade-in-right 0.5s forwards;
+  
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.05s * $i;
+    }
+  }
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  
+  // Tech highlight background
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  // Circuit connector line
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), transparent);
+    transition: width 0.3s ease;
+  }
+  
+  &:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+    border-color: rgba(139, 92, 246, 0.2);
+    
+    &::before {
+      opacity: 1;
+    }
+    
+    &::after {
+      width: 100%;
+    }
+    
+    .mobile-nav-icon {
+      color: #a78bfa;
+      transform: scale(1.1);
+    }
+  }
+  
+  &.active {
+    background-color: rgba(139, 92, 246, 0.15);
+    color: #ffffff;
+    border-left: 2px solid #a78bfa;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+    
+    &::after {
+      width: 100%;
+    }
+  }
+  
+  .mobile-nav-icon {
+    margin-right: 0.75rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+// Animations
+// Main animations for navbar elements
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes borderPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseGlow {
+  0% { text-shadow: 0 0 5px rgba(167, 139, 250, 0.2); }
+  50% { text-shadow: 0 0 15px rgba(167, 139, 250, 0.5); }
+  100% { text-shadow: 0 0 5px rgba(167, 139, 250, 0.2); }
+}
+
+@keyframes glitchAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+@keyframes pulseHighlight {
+  0% { opacity: 0; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0; }
+}
+
+@keyframes binarySlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes sun-burst {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.7)); }
+}
+
+@keyframes moon-glow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); filter: drop-shadow(0 0 2px rgba(200, 200, 255, 0.7)); }
+}
+
+/* Logo animations */
+.code-brackets {
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+  
+  a:hover & {
+    transform: scale(1.2) rotate(15deg);
+    color: #00c2ff;
+    text-shadow: 0 0 8px rgba(0, 194, 255, 0.5);
+  }
+}
+
+.logo-text {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  
+  a:hover & {
+    animation: gradient-shift 2s ease infinite;
+  }
+}
+
+.logo-accent {
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+  
+  a:hover & {
+    animation: gradient-shift 2s ease infinite;
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* Navigation animations */
+.nav-item {
+  opacity: 0;
+  animation: fade-in-right 0.5s ease forwards;
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav-link {
+  &:hover {
+    .nav-highlight {
+      width: 100%;
+    }
+    
+    .nav-icon {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.nav-icon {
+  transition: transform 0.3s ease;
+}
+
+.active-nav-link {
+  color: #3b82f6;
+  
+  .nav-highlight {
+    width: 100%;
+    opacity: 0.7;
+  }
+}
+
+/* Theme toggle animations */
+.theme-toggle {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: rotate(15deg);
+  }
+}
+
+.theme-icon {
+  transition: all 0.5s ease;
+}
+
+.sun-icon {
+  animation: sun-burst 2s ease-in-out infinite alternate;
+}
+
+.moon-icon {
+  animation: moon-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes sun-burst {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.7)); }
+}
+
+@keyframes moon-glow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); filter: drop-shadow(0 0 2px rgba(200, 200, 255, 0.7)); }
+}
+
+/* Mobile menu */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.mobile-menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}

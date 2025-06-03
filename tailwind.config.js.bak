@@ -1,0 +1,65 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{html,ts}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#f0f4fd',
+          100: '#e2eafb',
+          200: '#c5d5f6',
+          300: '#99b4ef',
+          400: '#6688e4',
+          500: '#3f61d8',
+          600: '#2a43c0',
+          700: '#26379e',
+          800: '#253183',
+          900: '#242e6c',
+          950: '#191c40',
+        },
+        secondary: {
+          50: '#f3f1ff',
+          100: '#ebe5ff',
+          200: '#d9ceff',
+          300: '#bea6ff',
+          400: '#a175ff',
+          500: '#8446ff',
+          600: '#7822ff',
+          700: '#6b15ec',
+          800: '#5a14c2',
+          900: '#4a149e',
+          950: '#2e0a6a',
+        },
+        accent: {
+          50: '#fff8ed',
+          100: '#ffefd4',
+          200: '#ffdba8',
+          300: '#ffc170',
+          400: '#ff9a38',
+          500: '#ff7d11',
+          600: '#fa6105',
+          700: '#c94404',
+          800: '#a0380c',
+          900: '#82310d',
+          950: '#461604',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      },
+    },
+  },
+  plugins: [],
+};

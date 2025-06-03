@@ -1,0 +1,527 @@
+// Speakers section styles with enhanced tech theme
+.speakers-section {
+  background: linear-gradient(135deg, #2d3a66, #364466, #1e3257);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  overflow: hidden;
+  color: #f8fafc;
+  
+  // Futuristic circuit board background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iY2lyY3VpdCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gMTAgMTAgTCA5MCAxMCBMIDkwIDkwIEwgMTAgOTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxMTksIDE0OSwgMjU1LCAwLjIpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjIiIGZpbGw9InJnYmEoMTE5LCAxNDksIDI1NSwgMC4xNSkiLz48Y2lyY2xlIGN4PSI5MCIgY3k9IjkwIiByPSIyIiBmaWxsPSJyZ2JhKDExOSwgMTQ5LCAyNTUsIDAuMTUpIi8+PHBhdGggZD0iTSAzMCAxMCBMIDMwIDMwIEwgNzAgMzAgTCA3MCA3MCBMIDkwIDcwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMTE5LCAxNDksIDI1NSwgMC4yKSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIiBmaWxsPSJyZ2JhKDExOSwgMTQ5LCAyNTUsIDAuMTUpIi8+PGNpcmNsZSBjeD0iNzAiIGN5PSI3MCIgcj0iMiIgZmlsbD0icmdiYSgxMTksIDE0OSwgMjU1LCAwLjE1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNjaXJjdWl0KSIvPjwvc3ZnPg==');
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+    animation: subtlePulse 8s infinite alternate;
+  }
+  
+  // Floating data particles
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 20%),
+      radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 20%),
+      radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+    animation: glow 10s ease-in-out infinite alternate;
+  }
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.7), 0 0 20px rgba(139, 92, 246, 0.5);
+  margin: 0 auto 2rem;
+  display: block;
+  width: 100%;
+  padding: 0;
+  z-index: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  animation: titlePulse 3s ease-in-out infinite;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #4c3a9c, #8b5cf6);
+    border-radius: 3px;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 50%;
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.section-description {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  
+  // Subtle typing animation effect
+  &::after {
+    content: '|';
+    display: inline-block;
+    opacity: 0;
+    animation: cursorBlink 1.5s infinite;
+    color: #8b5cf6;
+    font-weight: bold;
+  }
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Speaker card styles with futuristic tech theme
+.speaker-card {
+  background: #1a2742; /* Darker solid background color */
+  border-radius: 1rem;
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(96, 165, 250, 0.7);
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 3px solid rgba(96, 165, 250, 1);
+  transform-origin: center bottom;
+  /* Remove backdrop filter */
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+  
+  // Top glowing border
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #6366f1, #8b5cf6, #a78bfa);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  }
+  
+  // Circuit pattern background
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9Im1pY3JvY2lyY3VpdCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDEwIDAgTCAxMCAyMCBMIDMwIDIwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxMzksIDkyLCAyNDYsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgxMzksIDkyLCAyNDYsIDAuMSkiLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIxIiBmaWxsPSJyZ2JhKDEzOSwgOTIsIDI0NiwgMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNtaWNyb2NpcmN1aXQpIi8+PC9zdmc+');
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  &:hover {
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(96, 165, 250, 1);
+    transform: translateY(-0.5rem) scale(1.02);
+    border-color: #60a5fa;
+    
+    &::before {
+      transform: scaleX(1);
+    }
+    
+    .speaker-name {
+      text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+    }
+    
+    .speaker-image-container {
+      border-color: rgba(139, 92, 246, 0.6);
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+    }
+  }
+}
+
+.speaker-image-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  overflow: hidden;
+  border: 2px solid rgba(96, 165, 250, 0.5);
+  background-color: rgba(37, 99, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.2), 0 0 0 5px rgba(96, 165, 250, 0.05);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg, transparent 0%, rgba(139, 92, 246, 0.3) 25%, transparent 50%);
+    border-radius: 50%;
+    animation: rotateConic 4s linear infinite;
+  }
+}
+
+.speaker-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.speaker-initials {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.speaker-details {
+  text-align: center;
+}
+
+.speaker-name {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.02em;
+}
+
+.speaker-designation {
+  font-size: 1rem;
+  color: #60a5fa;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.speaker-bio {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+// Animated tech nodes
+.tech-node {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.6) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: 1;
+  opacity: 0.5;
+  animation: floatNodes 15s infinite linear;
+  
+  &:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    top: 15%;
+    left: 10%;
+    animation-delay: -2s;
+  }
+  
+  &:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    top: 75%;
+    left: 85%;
+    animation-delay: -5s;
+  }
+  
+  &:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    left: 5%;
+    animation-delay: -8s;
+  }
+}
+
+// Digital scan line effect
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(139, 92, 246, 0.5), transparent);
+  opacity: 0.5;
+  z-index: 2;
+  animation: scanEffect 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+// Grid lines
+.grid-lines {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+  
+  &.horizontal {
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: linear-gradient(to bottom, 
+      transparent 49.5%, 
+      rgba(96, 165, 250, 0.5) 49.5%,
+      rgba(96, 165, 250, 0.5) 50.5%,
+      transparent 50.5%);
+    background-size: 100% 80px;
+  }
+  
+  &.vertical {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to right, 
+      transparent 49.5%, 
+      rgba(96, 165, 250, 0.5) 49.5%,
+      rgba(96, 165, 250, 0.5) 50.5%,
+      transparent 50.5%);
+    background-size: 80px 100%;
+  }
+}
+
+// Title container and decorations
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  
+  .title-decoration {
+    height: 2px;
+    background: linear-gradient(to var(--direction, right), transparent, rgba(96, 165, 250, 0.7));
+    width: 80px;
+    position: relative;
+    margin: 0 1.5rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(96, 165, 250, 0.7);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    &.left {
+      --direction: right;
+      
+      &::before {
+        left: 0;
+      }
+    }
+    
+    &.right {
+      --direction: left;
+      
+      &::before {
+        right: 0;
+      }
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes titlePulse {
+  0% {
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.7), 0 0 20px rgba(139, 92, 246, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(96, 165, 250, 0.9), 0 0 30px rgba(139, 92, 246, 0.7);
+    transform: scale(1.03);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.7), 0 0 20px rgba(139, 92, 246, 0.5);
+    transform: scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cursorBlink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes subtlePulse {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.8;
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(10px);
+  }
+}
+
+@keyframes floatNodes {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(5px, -5px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-5px, 5px) rotate(240deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes scanEffect {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes rotateConic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Slide up animation for cards
+.slide-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}

@@ -1,0 +1,332 @@
+// Hero section main container
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+// Hero background gradient
+.hero-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, rgba(76, 58, 156, 0.8), rgba(42, 59, 143, 0.7), rgba(15, 23, 42, 0.9));
+  z-index: 0;
+}
+
+/* Tech-themed background elements */
+.tech-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Circuit board pattern */
+.circuit-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  z-index: 10;
+}
+
+/* Circuit board pattern */
+.circuit-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  z-index: 10;
+}
+
+/* Grid lines */
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(30, 144, 255, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(30, 144, 255, 0.1) 1px, transparent 1px);
+  z-index: 1;
+}
+
+/* Hero content container */
+.hero-content-container {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1200px;
+  
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 3.75rem;
+  }
+  
+  @media (min-width: 1280px) {
+    font-size: 4.5rem;
+  }
+  
+  .title-accent {
+    color: #38bdf8;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ffffff, #a5f3fc, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.hero-bottom-edge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  
+  .edge-gradient {
+    height: 4rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  }
+}
+
+/* Tech icons floating */
+.tech-elements {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.tech-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  color: rgba(56, 189, 248, 0.4);
+  animation: float 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(15px) rotate(-5deg); }
+}
+
+/* Binary rain container */
+.binary-rain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Tech heading with glow */
+.tech-heading {
+  position: relative;
+}
+
+.tech-glow {
+  color: #00f7ff;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.8),
+             0 0 20px rgba(0, 247, 255, 0.5),
+             0 0 30px rgba(0, 247, 255, 0.3);
+  animation: pulse-glow 4s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(0, 247, 255, 0.8),
+                      0 0 20px rgba(0, 247, 255, 0.5),
+                      0 0 30px rgba(0, 247, 255, 0.3); }
+  50% { text-shadow: 0 0 15px rgba(0, 247, 255, 1),
+                    0 0 30px rgba(0, 247, 255, 0.8),
+                    0 0 40px rgba(0, 247, 255, 0.5); }
+}
+
+/* Shimmering text effect for subheading */
+@keyframes shimmer-text {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.bg-gradient-text {
+  background-size: 200% auto;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(56, 189, 248, 0.9) 25%, rgba(255,255,255,1) 50%, rgba(139, 92, 246, 0.9) 75%, rgba(255,255,255,0.8) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-text 8s linear infinite;
+}
+
+/* Tech buttons */
+.tech-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.tech-button.primary {
+  background: linear-gradient(135deg, #007cf0, #00dfd8);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 124, 240, 0.4);
+}
+
+.tech-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.button-content {
+  position: relative;
+  z-index: 3;
+}
+
+.button-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 247, 255, 0.5), rgba(110, 0, 220, 0.5));
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tech-button:hover {
+  transform: translateY(-2px);
+}
+
+.tech-button:hover .button-glow {
+  opacity: 1;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+/* Binary element */
+.binary {
+  position: absolute;
+  font-family: monospace;
+  font-size: 14px;
+  color: rgba(56, 189, 248, 0.4);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Horizontal lines with data effect */
+.data-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 247, 255, 0), rgba(0, 247, 255, 0.5), rgba(0, 247, 255, 0));
+  opacity: 0.2;
+  width: 100%;
+}
+
+.data-line::before,
+.data-line::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background-color: rgba(0, 247, 255, 0.8);
+  animation: dataMovement 4s infinite linear;
+}
+
+@keyframes dataMovement {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 30%;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}

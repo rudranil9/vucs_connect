@@ -1,0 +1,165 @@
+/* Professional Computer Science Department Styles */
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Main app wrapper */
+.app-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  background: linear-gradient(120deg, #1a2151 0%, #293173 25%, #3b4095 50%, #4e4fa8 75%, #6159b6 100%);
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  
+  /* Prevent any vertical lines from appearing */
+  &::before,
+  &::after {
+    display: none !important;
+    content: none !important;
+  }
+  
+  /* Academic Dark Mode Theme */
+  &.dark {
+    background: linear-gradient(120deg, #0a1022 0%, #111b36 25%, #1e264a 50%, #2a305e 75%, #363a72 100%);
+    
+    .animated-shape {
+      opacity: 0.15;
+      filter: blur(40px);
+    }
+  }
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+/* Professional Academic Background Animation */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.animated-shape {
+  position: absolute;
+  filter: blur(60px);
+  transition: all 0.8s ease;
+  opacity: 0.6;
+  
+  &.shape-1 {
+    top: -8%;
+    right: -5%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(100, 116, 255, 0.25) 0%, rgba(86, 80, 199, 0.15) 70%);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: morph-slow 20s infinite alternate ease-in-out;
+  }
+  
+  &.shape-2 {
+    bottom: -10%;
+    left: -8%;
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(circle, rgba(81, 100, 240, 0.2) 0%, rgba(60, 67, 183, 0.1) 70%);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph-slow 25s infinite alternate-reverse ease-in-out;
+  }
+  
+  &.shape-3 {
+    top: 30%;
+    left: 25%;
+    width: 35vw;
+    height: 35vw;
+    background: radial-gradient(circle, rgba(142, 159, 255, 0.15) 0%, rgba(112, 101, 230, 0.08) 70%);
+    border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+    animation: morph-slow 30s 2s infinite alternate ease-in-out;
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-8%, -5%) scale(0.9);
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    transform: translate(0, 0) scale(0.9) rotate(0deg);
+  }
+  100% {
+    transform: translate(-5%, 8%) scale(1) rotate(10deg);
+  }
+}
+
+/* Fix for Tailwind CSS vertical line issue */
+/* This targets any potential elements that might be causing the line */
+.vertical-line,
+[class*='vertical'],
+[class*='divider'],
+[class*='separator'],
+.tech-node,
+.node-core,
+.node-pulse,
+.node-ring {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Smooth floating animations */
+@keyframes morph-slow {
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    transform: translate(1%, 1%) rotate(1deg);
+  }
+  66% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(-1%, -1%) rotate(-1deg);
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(1%, -1%) rotate(2deg);
+  }
+}
+
+/* Fix for any vertical lines */
+.app-wrapper::before,
+.app-wrapper::after,
+main::before,
+main::after,
+.animated-bg::before,
+.animated-bg::after {
+  display: none !important;
+  content: none !important;
+}

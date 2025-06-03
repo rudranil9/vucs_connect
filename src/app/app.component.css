@@ -1,0 +1,114 @@
+/* Main app component styles */
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Fix for vertical line */
+.app-wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: background-color 0.8s ease, color 0.8s ease;
+  min-height: 100vh;
+}
+
+/* Remove any potential vertical lines */
+.app-wrapper::before,
+.app-wrapper::after,
+.vertical-line,
+[class*='vertical'],
+[class*='divider'],
+[class*='separator'],
+.tech-node,
+.node-core,
+.node-pulse,
+.node-ring {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  content: none !important;
+}
+
+/* Force full width rendering */
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: block;
+  position: relative;
+  flex: 1;
+}
+
+main::before,
+main::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Animated background shapes with better positioning */
+.animated-bg {
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden; /* Prevent any overflow */
+  background: transparent; /* Ensure no background color */
+}
+
+.animated-bg::before,
+.animated-bg::after {
+  display: none !important;
+  content: none !important;
+}
+
+.animated-shape {
+  will-change: transform;
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(42, 67, 192, 0.1), rgba(132, 70, 255, 0.1));
+  border-radius: 50%;
+  filter: blur(30px);
+  transition: all 0.8s ease;
+}
+
+/* Animated shape positions */
+.animated-shape:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  width: 40vw;
+  height: 40vw;
+  animation: float 15s infinite alternate ease-in-out;
+}
+
+.animated-shape:nth-child(2) {
+  bottom: 10%;
+  right: 10%;
+  width: 35vw;
+  height: 35vw;
+  animation: float 18s infinite alternate-reverse ease-in-out;
+}
+
+/* Repositioned the third shape to avoid creating a vertical strip in center */
+.animated-shape:nth-child(3) {
+  top: 60%;
+  left: 25%;
+  width: 35vw;
+  height: 35vw;
+  animation: pulse 20s infinite alternate ease-in-out;
+}
+
+/* Dark mode adjustments */
+.app-wrapper.dark .animated-shape {
+  background: linear-gradient(to bottom, rgba(0, 168, 255, 0.1), rgba(0, 223, 216, 0.1));
+}

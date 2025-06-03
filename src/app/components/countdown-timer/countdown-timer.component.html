@@ -1,0 +1,57 @@
+<section id="countdown" class="countdown-section">
+  <!-- Futuristic animated background -->
+  <div class="countdown-background">
+    <div class="grid-overlay">
+      <div class="grid-pattern"></div>
+    </div>
+    <div class="bottom-fade"></div>
+  </div>
+  
+  <!-- Animated circles -->
+  <div class="animated-circle circle-1"></div>
+  <div class="animated-circle circle-2"></div>
+  
+  <div class="countdown-container">
+    <!-- Holographic title -->
+    <div class="title-container">
+      <h2 class="holographic-title">
+        <span class="countdown-icon">⏱️</span> Event Countdown
+      </h2>
+      <div class="title-underline"></div>
+    </div>
+    
+    <!-- Futuristic timer cards -->
+    <div class="timer-grid">
+      <div class="countdown-item" *ngFor="let unit of timeUnits; let i = index">
+        <div class="countdown-digits">
+          <div class="flip-card" #flipCards>
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                {{ timeLeft[unit] | number:'2.0' }}
+              </div>
+              <div class="flip-card-back">
+                {{ timeLeft[unit] | number:'2.0' }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="countdown-label">{{ unit }}</div>
+      </div>
+    </div>
+    
+    <!-- Event date with neon effect -->
+    <div class="event-date-container">
+      <p class="event-date">
+        <span class="date-icon">📅</span> June 7th, 2025 • 8:00 PM IST
+      </p>
+    </div>
+    
+    <!-- Glowing button -->
+    <div class="countdown-button-container">
+      <button class="futuristic-button">
+        <span class="button-text">Get Ready for Launch</span>
+        <span class="button-glow"></span>
+      </button>
+    </div>
+  </div>
+</section>

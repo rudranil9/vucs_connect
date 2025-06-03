@@ -1,0 +1,44 @@
+<section id="speakers" class="speakers-section">
+  <!-- Animated tech nodes -->
+  <div class="tech-node"></div>
+  <div class="tech-node"></div>
+  <div class="tech-node"></div>
+  <div class="tech-node"></div>
+  <div class="tech-node"></div>
+  
+  <!-- Digital scan line -->
+  <div class="scan-line"></div>
+  
+  <!-- Digital grid lines -->
+  <div class="grid-lines horizontal"></div>
+  <div class="grid-lines vertical"></div>
+  
+  <div class="section-container">
+    <div class="title-container">
+      <div class="title-decoration left"></div>
+      <h2 class="section-title">
+        Meet Our Speakers
+      </h2>
+      <div class="title-decoration right"></div>
+    </div>
+    <p class="section-description">
+      Learn from our distinguished alumni and industry experts who will share their valuable insights and experiences.
+    </p>
+    
+    <div class="speakers-grid">
+      <div *ngFor="let speaker of speakers" class="speaker-card slide-up">
+        <div class="speaker-image-container">
+          <div *ngIf="!speaker.imageUrl" class="speaker-initials">
+            {{ getInitials(speaker.name) }}
+          </div>
+          <img *ngIf="speaker.imageUrl" [src]="speaker.imageUrl" [alt]="speaker.name" class="speaker-image">
+        </div>
+        <div class="speaker-details">
+          <h3 class="speaker-name">{{ speaker.name }}</h3>
+          <p *ngIf="speaker.designation" class="speaker-designation">{{ speaker.designation }}</p>
+          <p class="speaker-bio">{{ speaker.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

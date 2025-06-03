@@ -1,0 +1,85 @@
+<nav [ngClass]="{'scrolled-nav': isScrolled, 'transparent-nav': !isScrolled}" 
+     class="navbar-container">
+  <!-- Binary code background decoration -->
+  <div class="binary-background">
+    <div class="binary-stream">01101100 01100101 01100001 01110010 01101110</div>
+    <div class="binary-stream stream-delayed">01100011 01110011 00100000 01100100 01100101 01110000 01110100</div>
+  </div>
+     
+  <!-- Circuit board pattern decoration -->
+  <div class="circuit-decoration"></div>
+  
+  <div class="navbar">
+    <!-- CS Department Logo with Animation -->
+    <a [routerLink]="['/']" class="nav-logo">
+      <div class="logo-container">
+        <span class="code-brackets">&lt;/&gt;</span>
+        <span class="logo-text">VUCS</span><span class="logo-accent">DEPT</span>
+        <div class="glitch-effect"></div>
+      </div>
+    </a>
+    
+    <!-- Main Navigation with proper routing -->
+    <ul class="nav-links">
+      <li *ngFor="let item of navItems; let i = index" 
+          class="nav-item" 
+          [style.animation-delay]="i * 0.1 + 's'"
+          [ngClass]="{'item-highlight': activeSection === item.link}"> 
+          <a [href]="'#' + item.link" 
+             class="nav-link"
+             [class.active]="activeSection === item.link"
+             (click)="setActive(item.link, $event)">
+            <div class="link-highlight"></div>
+            <span class="nav-icon" *ngIf="item.icon" [innerHTML]="item.icon"></span>
+            <span class="nav-text">{{ item.label }}</span>
+            <!-- Circuit connector lines -->
+            <span class="circuit-connector"></span>
+          </a>
+      </li>
+    </ul>
+    
+    <div class="nav-actions">
+    
+      <!-- Dark mode is permanent now - toggle removed -->
+      
+      <!-- Classic Mobile Menu Button -->          
+      <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu">
+        <div class="menu-btn-background"></div>
+        <svg *ngIf="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg *ngIf="isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation -->  
+  <div class="mobile-menu-backdrop" [class.active]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>    
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen" [class.inactive]="!isMobileMenuOpen">
+    <div class="mobile-menu-container">
+      <!-- Binary decoration at top of mobile menu -->
+      <div class="binary-decoration">
+        <span>01001100 01101111 01100111 01101001 01101110</span>
+      </div>
+      <ul class="mobile-nav-list">
+        <li *ngFor="let item of navItems" class="mobile-nav-item">
+          <a [href]="'#' + item.link" 
+             class="mobile-nav-link"
+             [class.active]="activeSection === item.link"
+             (click)="handleMobileNavClick(item.link, $event)">
+            <span class="mobile-nav-icon" *ngIf="item.icon" [innerHTML]="item.icon"></span>
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+      <!-- Code snippet decoration at bottom -->
+      <div class="code-snippet-decoration">
+        <pre>function techUnity() {{ '{' }}
+  return 'Hello, World!';
+{{ '}' }}</pre>
+      </div>
+    </div>
+  </div>
+</nav>

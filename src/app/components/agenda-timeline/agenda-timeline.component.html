@@ -1,0 +1,57 @@
+<section id="agenda" class="agenda-section">
+  <!-- Accent elements for modern UI with CS theme -->
+  <div class="accent-glow accent-1"></div>
+  <div class="accent-glow accent-2"></div>
+  
+  <div class="section-container">
+    <h2 class="section-title">
+      Event Agenda
+    </h2>
+    <p class="section-description">
+      Join us for an evening packed with insightful sessions, interactive discussions, and networking opportunities for computer science students.
+    </p>
+    
+    <div class="timeline-container">
+      <div class="timeline-wrapper">
+        <!-- Binary data flow animations for timeline -->
+        <div class="binary-element">01010</div>
+        <div class="binary-element">10101</div>
+        <div class="binary-element">11001</div>
+        <div class="binary-element">00110</div>
+        
+        <!-- Agenda items with alternating left-right layout -->
+        <div class="timeline-items">
+          <div *ngFor="let item of agendaItems; let i = index" class="timeline-item" [style.--item-index]="i">
+            <!-- Binary data animations for each item -->
+            <div class="binary-data left-data">01{{ i }}10</div>
+            <div class="binary-data right-data">10{{ i }}01</div>
+            
+            <!-- Content card with code editor styling -->
+            <div [ngClass]="{'item-right': i % 2 === 0, 'item-left': i % 2 !== 0}"
+                 class="agenda-card">
+              <!-- Code editor UI elements -->
+              <div class="header-bar"></div>
+              <div class="window-controls">• • •</div>
+              <div class="line-numbers">1<br>2<br>3<br>4<br>5</div>
+              <div class="shimmer"></div>
+              
+              <!-- Card content -->
+              <h3 class="agenda-title">
+                {{ item.title }}
+              </h3>
+              <p class="agenda-description">
+                {{ item.description }}
+              </p>
+              <div *ngIf="item.speaker" class="agenda-speaker">
+                Speaker: <span class="speaker-name">{{ item.speaker }}</span>
+              </div>
+              <div *ngIf="item.time" class="agenda-time">
+                {{ item.time }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

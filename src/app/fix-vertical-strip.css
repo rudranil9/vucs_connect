@@ -1,0 +1,41 @@
+/* EMERGENCY FIX: Cover the white vertical strip with a matching background */
+.white-strip-fix {
+  position: fixed;
+  top: 0;
+  left: 49.5vw; /* Position slightly to the left of center */
+  width: 2vw; /* Make it wide enough to cover the strip */
+  height: 100vh;
+  background: linear-gradient(180deg, #1e3a8a 0%, #7f5afd 100%); /* Match app background */
+  z-index: 9999;
+  pointer-events: none; /* Allow clicking through */
+}
+
+/* Target any element that might be positioned in the center */
+[style*="left: 50%"],
+[style*="transform: translate(-50%"],
+[style*="transform:translate(-50%"],
+[style*="translateX(-50%)"],
+[style*="left:50%"] {
+  display: none !important;
+}
+
+/* Ensure no borders or outlines creating lines */
+* {
+  border-left: none !important;
+  border-right: none !important;
+  outline: none !important;
+}
+
+/* Hide any elements with fixed width that might be centered */
+.center-line,
+.vertical-line,
+.divider,
+.separator,
+.timeline,
+.line,
+.node-core,
+.node-pulse,
+.node-ring,
+.tech-node {
+  display: none !important;
+}

@@ -1,0 +1,61 @@
+<section id="home" class="hero-section">
+  <!-- Background gradient -->
+  <div class="hero-background"></div>
+  
+  <!-- Tech-themed background elements -->
+  <div class="tech-background">
+    <!-- Circuit board pattern -->
+    <div class="circuit-pattern" [style.backgroundImage]="patternBackgroundStyle"></div>
+    
+    <!-- Digital grid lines -->
+    <div class="grid-lines"></div>
+    
+    <!-- Floating tech elements -->
+    <div class="tech-elements">
+      <div class="tech-icon" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"
+           [ngStyle]="{'top': getRandomPosition() + '%', 'left': getRandomPosition() + '%', 
+                      'animation-delay': (i * 0.5) + 's'}">
+        <i [class]="getTechIcon(i)"></i>
+      </div>
+    </div>
+    
+    <!-- Binary rain effect -->
+    <div class="binary-rain" #binaryRainContainer></div>
+  </div>
+  
+  <div class="hero-content-container">
+    <div class="fade-in">
+      <!-- Tech-styled heading with glow effect -->
+      <div class="tech-heading mb-4">
+        <h1 class="hero-title">
+          <span class="tech-glow">TECH</span> <span class="title-accent">UNITY</span>
+        </h1>
+      </div>
+      
+      <h2 class="hero-subtitle">
+        VUCS ALUMNI CONNECT
+      </h2>
+      
+      <p class="hero-description">
+        Join us for an unforgettable evening of networking, knowledge sharing, and reconnecting with your fellow alumni.
+      </p>
+      
+      <!-- Tech-styled buttons -->
+      <div class="hero-buttons">
+        <a href="#agenda" class="tech-button primary">
+          <span class="button-content">View Agenda</span>
+          <span class="button-glow"></span>
+        </a>
+        <a href="#join" class="tech-button secondary">
+          <span class="button-content">Join Event</span>
+          <span class="button-glow"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Animated tech-themed bottom edge -->
+  <div class="hero-bottom-edge">
+    <div class="edge-gradient"></div>
+  </div>
+</section>
