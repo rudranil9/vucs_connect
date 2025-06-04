@@ -36,7 +36,7 @@ export class AgendaTimelineComponent {
       id: 'panel',
       title: 'UNLEASH THE POWER OF YOUR COMMUNITY: PANEL DISCUSSION',
       description: 'Industry experts share insights on leveraging community for career growth and opportunities.',
-      speaker: 'CHIRANJIT NATH, KUMARESH KAR, SUBRATA CHAKRABORTY, ANJAN DUTTA',
+      speaker: 'CHIRANJIT NATH, KUMARESH KAR, SUBRATA CHAKRABORTY',
       time: '20-25 mins'
     },
     {

@@ -48,12 +48,7 @@ export class SpeakersComponent {
       designation: 'Panel Member',
       bio: 'Tech leader with expertise in mentoring and guiding early-career professionals through industry transitions.'
     },
-    {
-      id: 'anjan',
-      name: 'ANJAN DUTTA',
-      designation: 'Panel Member',
-      bio: 'Accomplished alumnus with extensive experience in bridging academic knowledge with industry requirements.'
-    }
+    
   ];
   
   getInitials(name: string): string {
