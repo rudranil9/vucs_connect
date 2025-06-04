@@ -6,6 +6,7 @@
   "start": "ng serve",
   "dev": "ng serve",
   "build": "ng build --configuration production",
+  "vercel-build": "npm run build",
   "postbuild": "cpx \"src/_redirects\" \"dist/tech-unity-alumni-connect/\""
 }
 
