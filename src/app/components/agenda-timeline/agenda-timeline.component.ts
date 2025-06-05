@@ -35,7 +35,7 @@ export class AgendaTimelineComponent {
     {
       id: 'panel',
       title: 'UNLEASH THE POWER OF YOUR COMMUNITY: PANEL DISCUSSION',
-      description: 'Industry experts share insights on leveraging community for career growth and opportunities.',
+      description: 'Industry experts share insights on leveraging community for career growth and opportunities about understanding the Interview Process, Resume building, Common Interview Questions, Red Flags and about the proper Etiquette',
       speaker: 'CHIRANJIT NATH, KUMARESH KAR, SUBRATA CHAKRABORTY',
       time: '20-25 mins'
     },
